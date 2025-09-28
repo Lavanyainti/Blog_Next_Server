@@ -57,7 +57,7 @@ async function loginUser(req,res) {
         return res.cookie("token",token,{
             httpOnly:true,
             secure:true,
-            sameSite: "lax", // CSRF protection
+            sameSite: "none", // CSRF protection
             maxAge: 60 * 60 * 1000
         }).status(200).json({message:"Login success", data:finalData})
     }catch(err){
@@ -69,7 +69,7 @@ async function logoutUser(req,res) {
     res.clearCookie("token",{
         httpOnly:true,
         secure:true,
-        sameSite:"lax"
+        sameSite:"none"
     }).status(200).json({message:"User logout successfully"})
 }
 
