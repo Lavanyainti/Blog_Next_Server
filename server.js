@@ -12,7 +12,7 @@ const cookieParser=require('cookie-parser')
 app.use(cookieParser());
 
 app.use(cors({
-    origin: ["https://blog-next-client-five.vercel.app/"], 
+    origin: ["https://blog-next-client-five.vercel.app"], 
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   }));
