@@ -8,7 +8,7 @@ const mongoose=require('mongoose')
 async function addedBlog(req,res) {
      try{
           let {title, subTitle, description, category,createdAt}=req.body;
-     let thumbnailImage=req.file ? req.file.filename : null;
+     let thumbnailImage=req.file ? req.file.path : null;
      const newBlog=new addBlog({
           user:req.user._id,
           thumbnailImage,

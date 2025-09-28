@@ -3,7 +3,7 @@ const mongoose=require('mongoose')
 
 async function addProfile(req,res) {
     const {userID, userName, profileDesciption}=req.body;
-    const profileImage=req.file ? req.file.filename : null;
+    const profileImage=req.file ? req.file.path : null;
     const userIDExists = await profile.findOne({
         userID: userID,
         user: { $ne: req.user._id }//except current user, ne means not equal, it is useful while updating
